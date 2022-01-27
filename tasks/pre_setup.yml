@@ -3,7 +3,7 @@
   become: yes
   apt:
     name:
-      - base-devel
+      - build-essential
       - software-properties-common
       - curl
       - gnupg
@@ -24,13 +24,13 @@
     - "deb http://security.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-security universe"
 - name: get ros repo key
   become: yes
-  get_url:
+  apt_key:
     url: "https://raw.githubusercontent.com/ros/rosdistro/master/ros.key"
-    dest: "/usr/share/keyrings/ros-archive-keyring.gpg"
+    state: present
 - name: enable ros repo
   become: yes
   apt_repository:
-    repo: "deb [signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] {{ ros2_apt_repo }} {{ ansible_distribution_release }} main"
+    repo: "deb {{ ros2_apt_repo }} {{ ansible_distribution_release }} main"
     state: present
 - name: install rosdep
   become: yes
