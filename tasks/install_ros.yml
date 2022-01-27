@@ -10,12 +10,12 @@
   register: ros2_installed
 - name: download ros release
   notify: delete ros2 temp
-  when: ros2_installed.stat.isdir == false
+  when: not (ros2_installed.stat.isdir is defined and ros2_installed.stat.isdir)
   get_url:
     url: "https://github.com/ros2/ros2/releases/download/release-{{ ros2_release }}/ros2-{{ ros2_release }}-linux-focal-amd64.tar.bz2"
     dest: "/tmp/ros.tar.bz2"
 - name: extract ros release
-  when: ros2_installed.stat.isdir == false
+  when: not (ros2_installed.stat.isdir is defined and ros2_installed.stat.isdir)
   unarchive:
     dest: "{{ ros2_install_location }}"
     src: "/tmp/ros.tar.bz2"
