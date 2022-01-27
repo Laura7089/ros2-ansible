@@ -1,6 +1,5 @@
 ---
 - name: pre-setup
-  become: yes
   include_tasks: pre_setup.yml
 
 - name: install ros

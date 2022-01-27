@@ -1,5 +1,6 @@
 ---
 - name: install needed packages
+  become: yes
   apt:
     name:
       - software-properties-common
@@ -13,6 +14,7 @@
     install_recommends: yes
 # Taken from https://github.com/ansible/ansible/issues/48714
 - name: Enable universe repository
+  become: yes
   apt_repository:
     repo: "{{ item }}"
     loop:
@@ -20,14 +22,17 @@
       - "deb http://archive.ubuntu.com/ubuntu/ focal-updates universe"
       - "deb http://security.ubuntu.com/ubuntu/ focal-security universe"
 - name: get ros repo key
+  become: yes
   get_url:
     url: "https://raw.githubusercontent.com/ros/rosdistro/master/ros.key"
     dest: "/usr/share/keyrings/ros-archive-keyring.gpg"
 - name: enable ros repo
+  become: yes
   apt_repository:
     repo: "deb [signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu focal main"
     state: present
 - name: install rosdep
+  become: yes
   apt:
     name: python3-rosdep
     install_recommends: yes
