@@ -1,7 +1,7 @@
 ros2
 =========
 
-<a href=""><img src="https://img.shields.io/travis/com/laura7089/ros2-ansible?style=flat-square"/></a>
+<a href=""><img src="https://img.shields.io/travis/com/laura7089/ros2-ansible?style=flat-square"/></a><a href="https://galaxy.ansible.com/laura7089/ros2"><img src="https://img.shields.io/ansible/role/57736?style=flat-square"/></a>
 
 Installs [ROS2](https://docs.ros.org/en/galactic/index.html) from released binaries on an [Ubuntu](https://ubuntu.com/) (focal) host.
 
