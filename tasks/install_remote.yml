@@ -6,6 +6,6 @@
 - name: extract ros release
   unarchive:
     dest: "{{ ros2_install_location }}"
-    src: "/tmp/ros.tar.bz2"
+    src: "~/ros.tar.bz2"
     remote_src: yes
     creates: "{{ ros2_install_location }}/ros2-linux"
