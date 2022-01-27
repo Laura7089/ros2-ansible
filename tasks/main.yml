@@ -1,0 +1,10 @@
+---
+- name: pre-setup
+  become: yes
+  include_tasks: pre_setup.yml
+
+- name: install ros
+  include_tasks: install_ros.yml
+
+- name: setup/initialise rosdep
+  include_tasks: setup_rosdep.yml

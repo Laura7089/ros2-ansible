@@ -1,0 +1,19 @@
+---
+- name: create install location
+  file:
+    path: "{{ ros2_install_location }}"
+    state: directory
+    mode: "0755"
+- name: download ros release
+  get_url:
+    url: "https://github.com/ros2/ros2/releases/download/release-{{ ros2_release }}/ros2-{{ ros2_release }}-linux-focal-amd64.tar.bz2"
+    dest: "/tmp/ros.tar.bz2"
+- name: extract ros release
+  unarchive:
+    dest: "{{ ros2_install_location }}"
+    src: "/tmp/ros.tar.bz2"
+    remote_src: yes
+- name: remove temp download file
+  file:
+    path: "/tmp/ros.tar.bz2"
+    state: absent

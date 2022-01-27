@@ -1,0 +1,12 @@
+---
+ros2_install_location: "~/ros2"
+ros2_release: "galactic-20210523"
+
+rosdep_init_update: yes
+rosdep_install: yes
+rosdep_packages:
+  - cyclonedds
+  - fastcdr
+  - fastrtps
+  - rti-connext-dds-5.3.1
+  - urdfdom_headers

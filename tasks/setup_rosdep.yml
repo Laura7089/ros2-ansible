@@ -1,0 +1,14 @@
+---
+- name: rosdep init
+  become: yes
+  when: rosdep_init_update
+  shell:
+    cmd: rosdep init
+- name: rosdep update
+  when: rosdep_init_update
+  shell:
+    cmd: rosdep update
+- name: install dependencies
+  when: rosdep_install
+  shell:
+    cmd: "rosdep install --from-paths {{ ros2_install_location }}/ros2-linux/share --ignore-src -y --skip-keys '{{ rosdep_dependencies | join(" ") }}'"
