@@ -1,6 +1,0 @@
----
-
-- name: delete ros2 temp
-  file:
-    path: "/tmp/ros.tar.bz2"
-    state: absent

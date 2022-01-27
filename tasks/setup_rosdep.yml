@@ -1,13 +1,10 @@
 ---
-- name: check rosdep isn't initialised
-  stat:
-    path: /etc/ros/rosdep/sources.list.d/20-default.list
-  register: rosdep_list
 - name: rosdep init
   become: yes
-  when: rosdep_init_update == true and rosdep_list.stat.exists == false
+  when: rosdep_init_update == true
   shell:
     cmd: rosdep init
+    creates: /etc/ros/rosdep/sources.list.d/20-default.list
 - name: rosdep update
   when: rosdep_init_update
   shell:
