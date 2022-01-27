@@ -17,10 +17,10 @@
   become: yes
   apt_repository:
     repo: "{{ item }}"
-    loop:
-      - "deb http://archive.ubuntu.com/ubuntu/ focal universe"
-      - "deb http://archive.ubuntu.com/ubuntu/ focal-updates universe"
-      - "deb http://security.ubuntu.com/ubuntu/ focal-security universe"
+  loop:
+    - "deb http://archive.ubuntu.com/ubuntu/ focal universe"
+    - "deb http://archive.ubuntu.com/ubuntu/ focal-updates universe"
+    - "deb http://security.ubuntu.com/ubuntu/ focal-security universe"
 - name: get ros repo key
   become: yes
   get_url:
