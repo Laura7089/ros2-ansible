@@ -1,6 +1,9 @@
 ---
 ros2_install_location: "~/ros2"
+
+ros2_source: "remote"
 ros2_release: "galactic-20210523"
+ros2_local_archive: "./ros.tar.bz2"
 
 rosdep_init_update: yes
 rosdep_install: yes

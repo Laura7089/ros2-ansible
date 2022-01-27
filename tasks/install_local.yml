@@ -1,0 +1,6 @@
+---
+- name: extract ros release
+  unarchive:
+    dest: "{{ ros2_install_location }}"
+    src: "{{ ros2_local_archive }}"
+    creates: "{{ ros2_install_location }}/ros2-linux"
