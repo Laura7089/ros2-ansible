@@ -1,7 +1,11 @@
 ---
+- name: check rosdep isn't initialised
+  stat:
+    path: /etc/ros/rosdep/sources.list.d/20-default.list
+  register: rosdep_list
 - name: rosdep init
   become: yes
-  when: rosdep_init_update
+  when: rosdep_init_update == true and rosdep_list.stat.exists == false
   shell:
     cmd: rosdep init
 - name: rosdep update
@@ -11,4 +15,4 @@
 - name: install dependencies
   when: rosdep_install
   shell:
-    cmd: "rosdep install --from-paths {{ ros2_install_location }}/ros2-linux/share --ignore-src -y --skip-keys '{{ rosdep_dependencies | join(" ") }}'"
+    cmd: "rosdep install --from-paths {{ ros2_install_location }}/ros2-linux/share --ignore-src -y --skip-keys '{{ rosdep_packages | join(' ') }}'"

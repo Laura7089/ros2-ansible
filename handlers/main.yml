@@ -1,0 +1,6 @@
+---
+
+- name: remove temp download file
+  file:
+    path: "/tmp/ros.tar.bz2"
+    state: absent
