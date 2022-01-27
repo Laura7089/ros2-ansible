@@ -1,6 +1,8 @@
 ros2
 =========
 
+<a href=""><img src="https://img.shields.io/travis/com/laura7089/ros2-ansible?style=flat-square"/></a>
+
 Installs [ROS2](https://docs.ros.org/en/galactic/index.html) from released binaries on an [Ubuntu](https://ubuntu.com/) (focal) host.
 
 Role Variables
@@ -29,8 +31,6 @@ rosdep_packages:
 
 Example Playbook
 ----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
 ```yaml
 - hosts: servers
