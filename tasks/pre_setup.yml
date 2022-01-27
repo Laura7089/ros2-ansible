@@ -3,6 +3,7 @@
   become: yes
   apt:
     name:
+      - base-devel
       - software-properties-common
       - curl
       - gnupg
@@ -29,7 +30,7 @@
 - name: enable ros repo
   become: yes
   apt_repository:
-    repo: "deb [signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu focal main"
+    repo: "deb [signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] {{ ros2_apt_repo }} {{ ansible_distribution_release }} main"
     state: present
 - name: install rosdep
   become: yes
