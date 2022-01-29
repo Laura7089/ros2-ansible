@@ -4,3 +4,9 @@
     dest: "{{ ros2_install_location }}"
     src: "{{ ros2_local_archive }}"
     creates: "{{ ros2_install_location }}/ros2-linux"
+- name: add ros env to shell
+  when: ros2_shell_startup
+  lineinfile:
+    path: "~/.profile"
+    line: "source {{ ros2_install_location }}/ros2-linux/setup.sh"
+    state: present

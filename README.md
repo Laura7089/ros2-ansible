@@ -19,6 +19,8 @@ A description of the settable variables for this role should go here, including 
   Defaults to `galactic-20210523`.
 - `ros2_local_archive`: used for the `local` source, the archive containing the ROS2 install **on the ansible controller**.
   Defaults to `./ros2.tar.bz2`.
+- `ros2_shell_startup`: bool specifying whether or not to modify `~/.profile` to source the ROS2 environment on startup.
+  Defaults to `yes`.
 - `rosdep_init_update`: bool specifying whether or not to run `rosdep init` and `rosdep update`.
   Defaults to `yes`.
 - `rosdep_install`: bool specifying whether or not to run `rosdep install ...` with the `rosdep_packages` variable.
