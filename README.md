@@ -6,6 +6,7 @@ ros2
 ![](https://img.shields.io/github/license/laura7089/ros2-ansible?style=flat-square)
 
 Installs [ROS2](https://docs.ros.org/en/galactic/index.html) from released binaries on an [Ubuntu](https://ubuntu.com/) (focal) host.
+[Available](https://galaxy.ansible.com/laura7089/ros2) on Ansible Galaxy.
 
 Role Variables
 --------------
