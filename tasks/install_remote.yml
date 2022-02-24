@@ -5,11 +5,14 @@
     dest: "{{ ros2_download_dest }}"
 - name: extract ros release
   unarchive:
-    dest: "{{ ros2_install_location }}"
+    dest: "{{ ros2_install_location | dirname }}"
     src: "{{ ros2_download_dest }}"
     remote_src: yes
-    creates: "{{ ros2_install_location }}/ros2-linux"
+    creates: "{{ ros2_install_location }}"
     mode: "755"
+  notify: correct ros2 install directory
+- name: flush handlers
+  meta: flush_handlers
 - name: add ros env to shell
   when: ros2_shell_startup
   lineinfile:

@@ -38,8 +38,8 @@
     name: python3-rosdep
     install_recommends: yes
     state: present
-- name: create install location
+- name: create install location parent
   file:
-    path: "{{ ros2_install_location }}"
+    path: "{{ ros2_install_location | dirname }}"
     state: directory
     mode: "0755"
