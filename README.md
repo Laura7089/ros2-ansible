@@ -15,6 +15,8 @@ Role Variables
   Defaults to `~/ros2`.
 - `ros2_source`: `remote` (default) or `local`.
 - `ros2_release`: used for the `remote` source, this should be the release string as found on the [ROS2 Releases page](https://github.com/ros2/ros2/releases).
+- `ros2_download_dest`: used for the `remote` source, the path to download the ros2 release archive to.
+  Defaults to `~/ros2.tar.bz2`.
   Defaults to `galactic-20210523`.
 - `ros2_local_archive`: used for the `local` source, the archive containing the ROS2 install **on the ansible controller**.
   Defaults to `./ros2.tar.bz2`.

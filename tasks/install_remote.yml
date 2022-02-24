@@ -2,11 +2,11 @@
 - name: download ros release
   get_url:
     url: "https://github.com/ros2/ros2/releases/download/release-{{ ros2_release }}/ros2-{{ ros2_release }}-linux-{{ ansible_distribution_release }}-amd64.tar.bz2"
-    dest: "~/ros.tar.bz2"
+    dest: "{{ ros2_download_dest }}"
 - name: extract ros release
   unarchive:
     dest: "{{ ros2_install_location }}"
-    src: "~/ros.tar.bz2"
+    src: "{{ ros2_download_dest }}"
     remote_src: yes
     creates: "{{ ros2_install_location }}/ros2-linux"
     mode: "755"
