@@ -9,6 +9,7 @@
     src: "~/ros.tar.bz2"
     remote_src: yes
     creates: "{{ ros2_install_location }}/ros2-linux"
+    mode: "755"
 - name: add ros env to shell
   when: ros2_shell_startup
   lineinfile:
