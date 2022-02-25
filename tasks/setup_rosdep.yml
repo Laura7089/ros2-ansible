@@ -1,7 +1,0 @@
----
-- name: rosdep init
-  become: yes
-  when: rosdep_init
-  shell:
-    cmd: rosdep init
-    creates: /etc/ros/rosdep/sources.list.d/20-default.list

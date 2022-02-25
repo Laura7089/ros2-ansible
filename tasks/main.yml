@@ -5,5 +5,19 @@
 - name: install ros
   include_tasks: "install_{{ ros2_source }}.yml"
 
+- name: add ros env to shell
+  when: ros2_shell_startup
+  lineinfile:
+    path: "~/.profile"
+    line: "source {{ ros2_install_location }}/ros2-linux/setup.sh"
+    state: present
+
 - name: setup/initialise rosdep
   include_tasks: setup_rosdep.yml
+
+- name: rosdep init
+  become: yes
+  when: rosdep_init
+  shell:
+    cmd: rosdep init
+    creates: /etc/ros/rosdep/sources.list.d/20-default.list

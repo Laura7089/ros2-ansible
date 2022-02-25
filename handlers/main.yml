@@ -1,11 +1,12 @@
 - name: mv ros2 install directory
   copy:
-    src: "{{ ros2_install_location | dirname }}/ros2-linux"
+    src: "/tmp/ros2-linux"
     dest: "{{ ros2_install_location }}"
     mode: "0755"
+    remote_src: yes
   listen: correct ros2 install directory
-- name: remove old ros2 extracted directory
+- name: remove temp ros2 extracted directory
   file:
-    path: "{{ ros2_install_location | dirname }}"
+    path: "/tmp"
     state: absent
   listen: correct ros2 install directory

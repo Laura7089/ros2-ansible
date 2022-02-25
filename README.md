@@ -16,9 +16,9 @@ Role Variables
 - `ros2_enable_universe`: bool specifying whether or not to enable the ubuntu universe repos. Defaults to `yes`.
 - `ros2_source`: `remote` (default) or `local`.
 - `ros2_release`: used for the `remote` source, this should be the release string as found on the [ROS2 Releases page](https://github.com/ros2/ros2/releases).
+  Defaults to `galactic-20210523-linux-amd64`.
 - `ros2_download_dest`: used for the `remote` source, the path to download the ros2 release archive to.
   Defaults to `~/ros2.tar.bz2`.
-  Defaults to `galactic-20210523`.
 - `ros2_local_archive`: used for the `local` source, the archive containing the ROS2 install **on the ansible controller**.
   Defaults to `./ros2.tar.bz2`.
 - `ros2_shell_startup`: bool specifying whether or not to modify `~/.profile` to source the ROS2 environment on startup.
