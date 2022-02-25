@@ -13,7 +13,7 @@ Role Variables
 
 - `ros2_install_location`: the fully-qualified path to extract the ros2 files to.
   Defaults to `~/ros2`.
-- `ros2_enable_universe`: bool specifying whether or not to enable the ubuntu universe repos.
+- `ros2_enable_universe`: bool specifying whether or not to enable the ubuntu universe repos. Defaults to `yes`.
 - `ros2_source`: `remote` (default) or `local`.
 - `ros2_release`: used for the `remote` source, this should be the release string as found on the [ROS2 Releases page](https://github.com/ros2/ros2/releases).
 - `ros2_download_dest`: used for the `remote` source, the path to download the ros2 release archive to.
@@ -23,20 +23,8 @@ Role Variables
   Defaults to `./ros2.tar.bz2`.
 - `ros2_shell_startup`: bool specifying whether or not to modify `~/.profile` to source the ROS2 environment on startup.
   Defaults to `yes`.
-- `rosdep_init_update`: bool specifying whether or not to run `rosdep init` and `rosdep update`.
+- `rosdep_init`: bool specifying whether or not to run `rosdep init` after installation. Defaults to `yes`.
   Defaults to `yes`.
-- `rosdep_install`: bool specifying whether or not to run `rosdep install ...` with the `rosdep_packages` variable.
-  Defaults to `yes`.
-- `rosdep_packages`: list of package names to install with `rosdep`. Defaults to:
-
-```yaml
-rosdep_packages:
-  - cyclonedds
-  - fastcdr
-  - fastrtps
-  - rti-connext-dds-5.3.1
-  - urdfdom_headers
-```
 
 Example Playbook
 ----------------

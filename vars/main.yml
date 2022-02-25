@@ -1,17 +1,12 @@
 ---
 ros2_install_location: "~/ros2"
 
+ros2_enable_universe: yes
+
 ros2_source: "remote"
 ros2_release: "galactic-20210523"
 ros2_download_dest: "~/ros2.tar.bz2"
 ros2_local_archive: "./ros.tar.bz2"
-ros2_shell_startup: yes
 
-rosdep_init_update: yes
-rosdep_install: yes
-rosdep_packages:
-  - cyclonedds
-  - fastcdr
-  - fastrtps
-  - rti-connext-dds-5.3.1
-  - urdfdom_headers
+ros2_shell_startup: yes
+rosdep_init: yes
