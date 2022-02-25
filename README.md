@@ -13,6 +13,7 @@ Role Variables
 
 - `ros2_install_location`: the fully-qualified path to extract the ros2 files to.
   Defaults to `~/ros2`.
+- `ros2_enable_universe`: bool specifying whether or not to enable the ubuntu universe repos.
 - `ros2_source`: `remote` (default) or `local`.
 - `ros2_release`: used for the `remote` source, this should be the release string as found on the [ROS2 Releases page](https://github.com/ros2/ros2/releases).
   Defaults to `galactic-20210523`.
